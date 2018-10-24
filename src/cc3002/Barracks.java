@@ -1,10 +1,8 @@
 package cc3002;
 
 public class Barracks extends Building{
-    private boolean canAttack;
     public Barracks(double hitPoint,double maxP){
         super(hitPoint,maxP);
-        canAttack=false;
     }
     @Override
     public void receiveAttackCastle(Castle castle){

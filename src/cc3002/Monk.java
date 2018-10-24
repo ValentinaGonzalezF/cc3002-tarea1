@@ -1,10 +1,8 @@
 package cc3002;
 
-import java.util.Calendar;
-
 public class Monk extends Unit {
-    public Monk(double hitPoints,double attackPoints,boolean canAttack){
-        super(hitPoints,attackPoints,canAttack);
+    public Monk(double hitPoints,double attackPoints){
+        super(hitPoints,attackPoints);
     }
 
     @Override

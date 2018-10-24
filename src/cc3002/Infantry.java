@@ -2,8 +2,8 @@ package cc3002;
 
 public class Infantry extends Unit{
 
-    public Infantry(double hitPoint,double attackPoint,boolean canAt){
-        super(hitPoint,attackPoint,canAt);
+    public Infantry(double hitPoint,double attackPoint){
+        super(hitPoint,attackPoint);
     }
     @Override
     public void attack(final Attackable atacado) {

@@ -1,10 +1,8 @@
 package cc3002;
 
-import jdk.nashorn.internal.ir.IfNode;
-
 public class Cavalry extends Unit {
-    public Cavalry(double hitPoint,double attackPoint,boolean canAt){
-        super(hitPoint,attackPoint,canAt);
+    public Cavalry(double hitPoint,double attackPoint){
+        super(hitPoint,attackPoint);
     }
 
     @Override

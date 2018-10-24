@@ -1,8 +1,8 @@
 package cc3002;
 
 public class Siege extends Unit{
-    public Siege(double hitPoint,double attackPoint,boolean canAt){
-        super(hitPoint,attackPoint,canAt);
+    public Siege(double hitPoint,double attackPoint){
+        super(hitPoint,attackPoint);
     }
 
     @Override

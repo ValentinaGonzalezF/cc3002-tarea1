@@ -2,8 +2,8 @@ package cc3002;
 
 public class Archer extends Unit {
 
-    public Archer(double hitPoint,double attackPoint,boolean canAt){
-        super(hitPoint,attackPoint,canAt);
+    public Archer(double hitPoint,double attackPoint){
+        super(hitPoint,attackPoint);
     }
 
     @Override

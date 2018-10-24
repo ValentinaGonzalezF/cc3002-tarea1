@@ -2,12 +2,10 @@ package cc3002;
 public abstract class Unit implements Attacker{
     private double hitPoints;
     private final double attackPoints;
-    private final boolean canAttack;
 
-    protected Unit(double hitPoints,double attackPoints,boolean canAttack){
+    protected Unit(double hitPoints,double attackPoints){
         this.attackPoints=attackPoints;
         this.hitPoints=hitPoints;
-        this.canAttack=canAttack;
     }
 
     public double getHitPoints(){

@@ -2,8 +2,8 @@ package cc3002;
 
 public class Villager extends Unit {
 
-    public Villager(double hitPoint,double attackPoint,boolean canAt){
-        super(hitPoint,attackPoint,canAt);
+    public Villager(double hitPoint,double attackPoint){
+        super(hitPoint,attackPoint);
     }
 
     @Override

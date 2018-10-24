@@ -1,15 +1,11 @@
 package cc3002;
 
-import java.util.Calendar;
-
 public class Castle extends Building implements Attacker{
     private double pointsAttack;
-    private boolean canAttack;
 
     public Castle(double hitPoint, double maxP, double pointAttack){
         super(hitPoint,maxP);
         this.pointsAttack=pointsAttack;
-        canAttack=true;
     }
     @Override
     public void attack(final Attackable atacado){
