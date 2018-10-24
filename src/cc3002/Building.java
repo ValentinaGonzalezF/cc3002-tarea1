@@ -3,13 +3,13 @@ package cc3002;
 public abstract class Building implements Attackable {
     private double maxPoint;
     private double hitPoints;
-    private boolean destroyed;
+    private double damageCounter;
 
     //ver si puede atacar
-    public Building(){//mejorar
-        destroyed=false;
-        hitPoints=0;
-        maxPoint=0;
+    protected Building(double hitPoints,double maxPoint){
+        this.hitPoints=hitPoints;
+        this.maxPoint=maxPoint;
+        this.damageCounter=0;
     }
 
     public double getMaxPoint() {
@@ -19,18 +19,30 @@ public abstract class Building implements Attackable {
         return hitPoints;
     }
     public boolean isDestroyed(){
-        return destroyed;
+         return hitPoints <= damageCounter;
     }
-    public void setMaxPoint(double maxPoint){
-        this.maxPoint=maxPoint;
+
+    public abstract void receiveAttackCastle(final Castle atacante);
+
+    public abstract void receiveAttackCavalry(final Cavalry atacante);
+
+    public abstract void receiveAttackMonk(final Monk atacante);
+
+    public abstract void receiveAttackInfantry(final Infantry atacante);
+
+    public abstract void receiveAttackSiege(final Siege atacante);
+
+    public abstract void receiveAttackVillager(final Villager atacante);
+
+    public abstract void receiveAttackArcher(final Archer atacante);
+
+    protected void receiveDamage(final double attackPoints) {
+        if (!isDestroyed()) {
+            damageCounter += attackPoints;
+        }
     }
-    public void setHitPoints(double hitPoints){
-        this.hitPoints=hitPoints;
-    }
-    public void setDestroyed(boolean destroyed){
-        this.destroyed=destroyed;
-    }
-    public void setPointsattack(double pointsattack){
-        this.pointsAttack=pointsattack;
-    }
+
+
+
+
 }
