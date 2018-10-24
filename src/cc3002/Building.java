@@ -37,6 +37,12 @@ public abstract class Building implements Attackable {
     protected void receiveDamage(final double attackPoints) {
         if (isAlive()) {
             hitPoints -= attackPoints;
+            if (hitPoints<0){
+                hitPoints=0;
+            }
+            if (hitPoints>maxPoint){
+                hitPoints=maxPoint;
+            }
         }
     }
 

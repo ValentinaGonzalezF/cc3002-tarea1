@@ -2,10 +2,12 @@ package cc3002;
 public abstract class Unit implements Attacker{
     private double hitPoints;
     private final double attackPoints;
+    private final double maxHitPoints;
 
     protected Unit(double hitPoints,double attackPoints){
         this.attackPoints=attackPoints;
         this.hitPoints=hitPoints;
+        maxHitPoints=2*hitPoints;
     }
 
     public double getHitPoints(){
@@ -38,10 +40,15 @@ public abstract class Unit implements Attacker{
 
     protected void receiveDamage(final double attackPoints) {
         if (isAlive()) {
-            hitPoints -= attackPoints;
+                hitPoints -= attackPoints;
+
             if (hitPoints<0){
                 hitPoints=0;
             }
+            if (hitPoints>maxHitPoints){
+                hitPoints=maxHitPoints;
+            }
+
         }
     }
 }
