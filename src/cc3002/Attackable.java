@@ -15,4 +15,5 @@ public interface Attackable{
    void receiveAttackVillager(Villager atacante);
 
    void receiveAttackArcher(Archer atacante);
+   boolean isAlive();
 }

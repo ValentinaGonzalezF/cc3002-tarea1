@@ -1,26 +1,25 @@
 package cc3002;
 public abstract class Unit implements Attacker{
-    private final double hitPoints;
+    private double hitPoints;
     private final double attackPoints;
     private final boolean canAttack;
-    private double damageCounter;
 
     protected Unit(double hitPoints,double attackPoints,boolean canAttack){
         this.attackPoints=attackPoints;
         this.hitPoints=hitPoints;
         this.canAttack=canAttack;
-        this.damageCounter=0;
     }
 
     public double getHitPoints(){
         return hitPoints;
     }
 
+    public void setHitPoints(double hp){hitPoints=hp;}
     public double getAttackPoints(){
         return attackPoints;
     }
     public boolean isAlive(){
-        return hitPoints > damageCounter;
+        return hitPoints > 0;
     }
 
     public abstract void attack(final Attackable atacado);
@@ -41,7 +40,10 @@ public abstract class Unit implements Attacker{
 
     protected void receiveDamage(final double attackPoints) {
         if (isAlive()) {
-            damageCounter += attackPoints;
+            hitPoints -= attackPoints;
+            if (hitPoints<0){
+                hitPoints=0;
+            }
         }
     }
 }

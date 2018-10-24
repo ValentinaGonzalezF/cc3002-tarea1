@@ -6,8 +6,9 @@ public class Infantry extends Unit{
         super(hitPoint,attackPoint,canAt);
     }
     @Override
-    public void attack(final Attackable atacado){
-        atacado.receiveAttackInfantry(this);
+    public void attack(final Attackable atacado) {
+        if(isAlive()){
+        atacado.receiveAttackInfantry(this);}
     }
 
     @Override

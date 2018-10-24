@@ -8,7 +8,8 @@ public class Villager extends Unit {
 
     @Override
     public void attack(Attackable atacado) {
-        atacado.receiveAttackVillager(this);
+        if(isAlive()){//ver si esta el otro
+        atacado.receiveAttackVillager(this);}
     }
 
     @Override

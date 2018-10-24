@@ -3,23 +3,21 @@ package cc3002;
 public abstract class Building implements Attackable {
     private double maxPoint;
     private double hitPoints;
-    private double damageCounter;
 
     //ver si puede atacar
     protected Building(double hitPoints,double maxPoint){
         this.hitPoints=hitPoints;
         this.maxPoint=maxPoint;
-        this.damageCounter=0;
     }
-
+    public void setHitPoints(double hp){hitPoints=hp;}
     public double getMaxPoint() {
         return maxPoint;
     }
     public double getHitPoints(){
         return hitPoints;
     }
-    public boolean isDestroyed(){
-         return hitPoints <= damageCounter;
+    public boolean isAlive(){
+         return hitPoints>0;
     }
 
     public abstract void receiveAttackCastle(final Castle atacante);
@@ -37,8 +35,8 @@ public abstract class Building implements Attackable {
     public abstract void receiveAttackArcher(final Archer atacante);
 
     protected void receiveDamage(final double attackPoints) {
-        if (!isDestroyed()) {
-            damageCounter += attackPoints;
+        if (isAlive()) {
+            hitPoints -= attackPoints;
         }
     }
 

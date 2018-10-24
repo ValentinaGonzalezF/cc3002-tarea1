@@ -13,7 +13,7 @@ public class Castle extends Building implements Attacker{
     }
     @Override
     public void attack(final Attackable atacado){
-        atacado.receiveAttackCastle(this);
+        if (isAlive()){atacado.receiveAttackCastle(this);}
     }
     @Override
     public double getAttackPoints() {

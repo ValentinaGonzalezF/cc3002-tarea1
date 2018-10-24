@@ -7,7 +7,7 @@ public class Siege extends Unit{
 
     @Override
     public void attack(final Attackable atacado){
-        atacado.receiveAttackSiege(this);
+        if(isAlive()){atacado.receiveAttackSiege(this);}
     }
 
     @Override

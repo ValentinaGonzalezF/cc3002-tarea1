@@ -9,16 +9,16 @@ public class Monk extends Unit {
 
     @Override
     public void attack(final Attackable atacado){
-        atacado.receiveAttackMonk(this);
+        if (isAlive()){atacado.receiveAttackMonk(this);}
     }
     @Override
     public void receiveAttackCastle(Castle castle) {
-        //receiveDamage(castle.getAttackPoints()*0.0);        lo mato
+        this.setHitPoints(0);
     }
 
     @Override
     public void receiveAttackCavalry(Cavalry cavalry) {
-        //receiveDamage(cavalry.getAttackPoints()*1.5);
+        this.setHitPoints(0);
     }
 
     @Override
@@ -28,12 +28,12 @@ public class Monk extends Unit {
 
     @Override
     public void receiveAttackInfantry(Infantry infantry) {
-        //receiveDamage(infantry.getAttackPoints()*1.5);
+        this.setHitPoints(0);
     }
 
     @Override
     public void receiveAttackSiege(Siege siege) {
-        //receiveDamage(siege.getAttackPoints()*1.5);
+        this.setHitPoints(0);
     }
 
     @Override
@@ -43,6 +43,6 @@ public class Monk extends Unit {
 
     @Override
     public void receiveAttackArcher(Archer archer) {
-        //receiveDamage(archer.getAttackPoints()*1.5);
+        this.setHitPoints(0);
     }
 }

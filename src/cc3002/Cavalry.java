@@ -9,7 +9,8 @@ public class Cavalry extends Unit {
 
     @Override
     public void attack(final Attackable atacado){
-        atacado.receiveAttackCavalry(this);
+        if(isAlive()){
+        atacado.receiveAttackCavalry(this);}
     }
 
     @Override
