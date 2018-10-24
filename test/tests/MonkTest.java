@@ -1,50 +1,48 @@
 package tests;
-
 import cc3002.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class VillagerTest {
-    private Villager villager;
+public class MonkTest {
+    private Monk monk;
     private Archer archer;
     private Cavalry cavalry;
     private Castle castle;
     private Infantry infantry;
-    private Monk monk;
+    private Monk monk2;
     private Siege siege;
-    private Villager villager2;
+    private Villager villager;
     private Barracks barracks;
-
-
-    @Before public void create() {
-        villager = new Villager(50, 10);
+    @Before
+    public void create() {
+        monk= new Monk(50,5);
     }
 
     @Test
-    public void getHitPoint(){
-        assertEquals(50,villager.getHitPoints(),0.002);
+    public void getHitPoints() {
+        assertEquals(50, monk.getHitPoints(),0.002);
     }
 
+    @Test
     public void setHitPoints() {
-        villager.setHitPoints(0);
-        assertEquals(0,villager.getHitPoints(),0.002);
+        monk.setHitPoints(1300);
+        assertEquals(100,monk.getHitPoints(),0.002);
     }
 
     @Test
     public void getAttackPoints() {
-        assertEquals(10,villager.getAttackPoints(),0.001);
+        assertEquals(5,monk.getAttackPoints(),0.001);
     }
 
     @Test
     public void isAlive(){
-        villager.setHitPoints(0);
-        assertFalse(villager.isAlive());
+        monk.setHitPoints(0);
+        assertFalse(monk.isAlive());
     }
+    @Test
     public void attack() {
-
     }
 
     @Test
@@ -60,10 +58,6 @@ public class VillagerTest {
     }
 
     @Test
-    public void receiveAttackInfantry() {
-    }
-
-    @Test
     public void receiveAttackSiege() {
     }
 
@@ -73,10 +67,5 @@ public class VillagerTest {
 
     @Test
     public void receiveAttackArcher() {
-    }
-
-    @Test
-    public void receiveDamage(){
-
     }
 }

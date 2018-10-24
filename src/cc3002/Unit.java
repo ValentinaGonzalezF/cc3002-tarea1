@@ -13,7 +13,15 @@ public abstract class Unit implements Attacker{
         return hitPoints;
     }
 
-    public void setHitPoints(double hp){hitPoints=hp;}
+    public void setHitPoints(double hp){
+        if (hp>maxHitPoints){
+            hitPoints=maxHitPoints;
+        }
+        else if(hp<0){
+            hitPoints=0;
+        }
+        else{hitPoints=hp;}}
+
     public double getAttackPoints(){
         return attackPoints;
     }

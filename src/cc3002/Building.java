@@ -9,7 +9,14 @@ public abstract class Building implements Attackable {
         this.hitPoints=hitPoints;
         this.maxPoint=maxPoint;
     }
-    public void setHitPoints(double hp){hitPoints=hp;}
+    public void setHitPoints(double hp) {
+        if (hp>maxPoint){
+            hitPoints=maxPoint;
+        }
+        else if(hp<0){
+            hitPoints=0;
+        }
+        else{hitPoints=hp;}}
     public double getMaxPoint() {
         return maxPoint;
     }

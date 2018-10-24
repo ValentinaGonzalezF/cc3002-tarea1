@@ -3,7 +3,7 @@ package cc3002;
 public class Castle extends Building implements Attacker{
     private double pointsAttack;
 
-    public Castle(double hitPoint, double maxP, double pointAttack){
+    public Castle(double hitPoint, double maxP, double pointsAttack){
         super(hitPoint,maxP);
         this.pointsAttack=pointsAttack;
     }
