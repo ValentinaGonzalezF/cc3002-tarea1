@@ -9,7 +9,6 @@ public abstract class Unit implements Attacker{
         this.hitPoints=hitPoints;
         maxHitPoints=2*hitPoints;
     }
-
     public double getHitPoints(){
         return hitPoints;
     }
