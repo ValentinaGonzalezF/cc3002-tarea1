@@ -43,7 +43,6 @@ public abstract class Unit implements Attacker{
             hitPoints=0;
         }
         else{hitPoints=hp;}}
-
     /**
      * Método que retorna el atributo attacktPoints
      * @return  attackPoints del objeto al que se le aplica el metodo

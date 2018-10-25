@@ -16,4 +16,5 @@ public interface Attacker extends Attackable{
      * @return AttackPoints del objeto que se le aplica método
      */
     double getAttackPoints();
+
 }
