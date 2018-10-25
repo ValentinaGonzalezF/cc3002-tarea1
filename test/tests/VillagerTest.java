@@ -21,6 +21,14 @@ public class VillagerTest {
 
     @Before public void create() {
         villager = new Villager(50, 10);
+        infantry= new Infantry(50,25);
+        castle= new Castle(50, 100,20);
+        archer = new Archer(50, 20);
+        cavalry = new Cavalry(50, 15);
+        siege= new Siege(50,15);
+        villager2= new Villager(50,3);
+        barracks= new Barracks(50, 110);
+        monk= new Monk(50,7);
     }
 
     @Test
@@ -43,40 +51,52 @@ public class VillagerTest {
         villager.setHitPoints(0);
         assertFalse(villager.isAlive());
     }
-    public void attack() {
 
+    @Test
+    public void attack() {
+        villager.attack(infantry);
+        assertEquals(42,infantry.getHitPoints(),0.001);
     }
 
     @Test
     public void receiveAttackCastle() {
+        villager.receiveAttackCastle(castle);
+        assertEquals(26,villager.getHitPoints(),0.001);
     }
 
     @Test
     public void receiveAttackCavalry() {
+        villager.receiveAttackCavalry(cavalry);
+        assertEquals(27.5,villager.getHitPoints(),0.001);
     }
 
     @Test
     public void receiveAttackMonk() {
+        villager.receiveAttackMonk(monk);
+        assertEquals(53.5,villager.getHitPoints(),0.001);
     }
 
     @Test
     public void receiveAttackInfantry() {
+        villager.receiveAttackInfantry(infantry);
+        assertEquals(12.5,villager.getHitPoints(),0.001);
     }
 
     @Test
     public void receiveAttackSiege() {
+        villager.receiveAttackSiege(siege);
+        assertEquals(27.5,villager.getHitPoints(),0.001);
     }
 
     @Test
     public void receiveAttackVillager() {
+        villager.receiveAttackVillager(villager2);
+        assertEquals(47,villager.getHitPoints(),0.001);
     }
 
     @Test
     public void receiveAttackArcher() {
-    }
-
-    @Test
-    public void receiveDamage(){
-
+        villager.receiveAttackArcher(archer);
+        assertEquals(20,villager.getHitPoints(),0.001);
     }
 }

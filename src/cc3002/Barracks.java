@@ -30,8 +30,7 @@ public class Barracks extends Building{
     }
 
     @Override
-    public void receiveAttackArcher(Archer villager ) {
-        receiveDamage(villager.getAttackPoints()*-0.7);
-
+    public void receiveAttackArcher(Archer archer ) {
+        receiveDamage(archer.getAttackPoints()*0.7);
     }
 }

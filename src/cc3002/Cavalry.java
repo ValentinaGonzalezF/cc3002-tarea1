@@ -33,16 +33,16 @@ public class Cavalry extends Unit {
 
     @Override
     public void receiveAttackSiege(Siege siege) {
-        receiveDamage(siege.getAttackPoints()*1.5);
+        receiveDamage(siege.getAttackPoints()*1.0);
     }
 
     @Override
     public void receiveAttackVillager(Villager villager) {
-        receiveDamage(villager.getAttackPoints()*0.8);
+        receiveDamage(villager.getAttackPoints()*0.5);
     }
 
     @Override
     public void receiveAttackArcher(Archer archer) {
-        receiveDamage(archer.getAttackPoints()*1.2);
+        receiveDamage(archer.getAttackPoints()*1.0);
     }
 }

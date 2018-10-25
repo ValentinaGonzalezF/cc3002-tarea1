@@ -29,20 +29,22 @@ public abstract class Unit implements Attacker{
         return hitPoints > 0;
     }
 
+    @Override
     public abstract void attack(final Attackable atacado);
 
+    @Override
     public abstract void receiveAttackCastle(final Castle atacante);
-
+    @Override
     public abstract void receiveAttackCavalry(final Cavalry atacante);
-
+    @Override
     public abstract void receiveAttackMonk(final Monk atacante);
-
+    @Override
     public abstract void receiveAttackInfantry(final Infantry atacante);
-
+    @Override
     public abstract void receiveAttackSiege(final Siege atacante);
-
+    @Override
     public abstract void receiveAttackVillager(final Villager atacante);
-
+    @Override
     public abstract void receiveAttackArcher(final Archer atacante);
 
     protected void receiveDamage(final double attackPoints) {
